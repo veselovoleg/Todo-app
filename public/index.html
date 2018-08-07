@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO App</title>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>My To Do List</h2>
+            <input type="text" placeholder="New Task" @keyup.enter="createTask" v-model="newTask.name">
+            <span class="addBtn" @click="createTask" title="Add new task">Add</span>
+        </div>
+
+        <ul v-for="(task, index) in tasks">
+            <li>
+                {{ task.name }}
+                <span class="close" @click="deleteTask(index)" title="Delete task">×</span>
+            </li>
+        </ul>
+    </div>  
+
+    <script src="/main.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</body>
+
+</html>
